@@ -13,5 +13,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        ArrayAdapter<Book> adapter = new ArrayAdapter<Book>(this, R.layout.book_list_entry, Books.AllBooks);
+        ListView listView = (ListView)findViewById(R.id.book_list);
+        listView.setAdapter(adapter);
     }
 }
