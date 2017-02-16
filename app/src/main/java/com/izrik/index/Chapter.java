@@ -57,4 +57,9 @@ public class Chapter {
 
         return getBook().getChapters().indexOf(this);
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(getChapterIndex() + 1);
+    }
 }
