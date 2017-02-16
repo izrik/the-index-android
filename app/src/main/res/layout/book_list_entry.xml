@@ -5,7 +5,10 @@
     android:layout_height="wrap_content"
     android:id="@+id/book_title"
     android:textAppearance="@android:style/TextAppearance.Material.Large"
-    android:lineSpacingExtra="8sp"
-    android:textSize="30sp">
+    android:textSize="30sp"
+    android:paddingLeft="10sp"
+    android:paddingRight="10sp"
+    android:paddingTop="10sp"
+    android:paddingBottom="10sp">
 
 </TextView>
