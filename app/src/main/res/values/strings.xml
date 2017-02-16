@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Index</string>
     <string name="title_activity_list_chapters">ListChaptersActivity</string>
+    <string name="title_activity_read_chapter">ReadChapterActivity</string>
 </resources>

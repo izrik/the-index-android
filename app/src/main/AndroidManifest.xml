@@ -24,6 +24,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.izrik.index.MainActivity" />
         </activity>
+        <activity
+            android:name=".ReadChapterActivity"
+            android:label="@string/title_activity_read_chapter"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

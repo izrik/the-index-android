@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/verse_number"
+        android:layout_weight="0"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textStyle="normal|bold"
+        android:maxLines="1" />
+
+    <TextView
+        android:text="value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/verse_content"
+        android:layout_weight="1"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:paddingLeft="1sp" />
+</LinearLayout>

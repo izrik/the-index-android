@@ -55,4 +55,9 @@ public class Verse {
 
         return getChapter().getVerses().indexOf(this);
     }
+
+    @Override
+    public String toString() {
+        return getValue();
+    }
 }
