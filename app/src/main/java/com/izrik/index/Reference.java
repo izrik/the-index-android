@@ -30,9 +30,9 @@ public class Reference {
     public String toString() {
         return
                 (Book != null ? Book.getShortName() + " " : "") +
-                        (Chapter != null ? Integer.toString(Chapter.getChapterIndex(Book) + 1) : "") +
+                        (Chapter != null ? Integer.toString(Chapter.getChapterIndex() + 1) : "") +
                         (Chapter != null && Verse != null ? ":" : "") +
-                        (Verse != null ? Integer.toString(Verse.getVerseIndex(Chapter) + 1) : "");
+                        (Verse != null ? Integer.toString(Verse.getVerseIndex() + 1) : "");
     }
 
 }

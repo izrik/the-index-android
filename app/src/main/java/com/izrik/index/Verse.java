@@ -2,8 +2,7 @@ package com.izrik.index;
 
 public class Verse {
 
-    public Verse()
-    {
+    public Verse() {
         this("");
     }
 
@@ -12,33 +11,48 @@ public class Verse {
     }
 
     private Chapter _parentChapter = null;
+
     public Chapter getParentChapter() {
         return _parentChapter;
     }
+
     public void setParentChapter(Chapter value) {
         _parentChapter = value;
     }
 
     private String _value;
+
     public String getValue() {
         return _value;
     }
+
     public void setValue(String value) {
         this._value = value;
     }
 
-//    public static Reference ToReference(Verse verse) {
-//        return verse.ToReference();
-//    }
+    public static Reference ToReference(Verse verse) {
+        return verse.ToReference();
+    }
 
-//    public Reference ToReference() {
-//        return new Reference(ParentChapter != null ? ParentChapter.ParentBook : null, ParentChapter, this);
-//    }
+    public Reference ToReference() {
+        return new Reference(getChapter() != null ? getChapter().getBook() : null, getChapter(), this);
+    }
 
-    public int getVerseIndex(Chapter parentChapter) {
-        if (parentChapter == null) throw new IllegalArgumentException("parentChapter cannot be null");
-        if (!parentChapter.getVerses().contains(this)) throw new IllegalArgumentException("parentChapter does not contain this verse");
+    private Chapter chapter;
 
-        return parentChapter.getVerses().indexOf(this);
+    public Chapter getChapter() {
+        return this.chapter;
+    }
+
+    public void setChapter(Chapter value) {
+        this.chapter = value;
+    }
+
+    public int getVerseIndex() {
+        if (getChapter() == null) throw new IllegalArgumentException("Chapter cannot be null");
+        if (!getChapter().getVerses().contains(this))
+            throw new IllegalArgumentException("Chapter does not contain this verse");
+
+        return getChapter().getVerses().indexOf(this);
     }
 }

@@ -13,6 +13,9 @@ public class Book {
         this.setShortName(shortName);
         if (chapters != null) {
             Collections.addAll(this.getChapters(), chapters);
+            for (Chapter ch : this.getChapters()) {
+                ch.setBook(this);
+            }
         }
     }
 

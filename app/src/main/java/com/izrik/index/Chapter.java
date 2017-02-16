@@ -13,15 +13,26 @@ public class Chapter {
         this.setTitle(title);
         if (verses != null) {
             Collections.addAll(this.getVerses(), verses);
+            for (Verse ch : this.getVerses()) {
+                ch.setChapter(this);
+            }
         }
 
     }
 
-//    public Reference GetReference()
-//    {
-//        return new Reference(ParentBook, this, null);
-//        //return (ParentBook != null ? ParentBook.ShortName : "") + " " + ChapterNumber.ToString();
-//    }
+    public Reference GetReference() {
+        return new Reference(getBook(), this, null);
+    }
+
+    private Book book;
+
+    public Book getBook() {
+        return this.book;
+    }
+
+    public void setBook(Book value) {
+        this.book = value;
+    }
 
     private String _title;
 
@@ -39,10 +50,11 @@ public class Chapter {
         return _verses;
     }
 
-    public int getChapterIndex(Book parentBook) {
-        if (parentBook == null) throw new IllegalArgumentException("parentBook cannot be null");
-        if (!parentBook.getChapters().contains(this)) throw new IllegalArgumentException("parentBook does not contain this chapter");
+    public int getChapterIndex() {
+        if (getBook() == null) throw new IllegalArgumentException("parentBook cannot be null");
+        if (!getBook().getChapters().contains(this))
+            throw new IllegalArgumentException("parentBook does not contain this chapter");
 
-        return parentBook.getChapters().indexOf(this);
+        return getBook().getChapters().indexOf(this);
     }
 }
