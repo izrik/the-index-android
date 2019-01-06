@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.izrik.index.MainActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.izrik.index.MainActivity"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:weightSum="10">
 
-    <ListView
-        android:id="@+id/book_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true" />
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="8"
+        android:weightSum="10" >
+
+        <Button
+            android:id="@+id/button_books"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2"
+            android:text="Books"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/button_index"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2"
+            android:text="Index of words"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/button_about"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2"
+            android:text="About"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

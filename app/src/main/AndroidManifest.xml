@@ -27,7 +27,8 @@
         <activity
             android:name=".ReadChapterActivity"
             android:label="@string/title_activity_read_chapter"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ListBooksActivity"></activity>
     </application>
 
 </manifest>

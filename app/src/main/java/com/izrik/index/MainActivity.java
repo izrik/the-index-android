@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.izrik.index.books.Books;
@@ -17,15 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter<Book> adapter = new ArrayAdapter<Book>(this, R.layout.book_list_entry, Books.AllBooks);
-        ListView listView = (ListView)findViewById(R.id.book_list);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        Button button1 = (Button)findViewById(R.id.button_1);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent1 = new Intent(getApplicationContext(), ListChaptersActivity.class);
-                intent1.putExtra("bookIndex", position);
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getApplicationContext(), ListBooksActivity.class);
                 startActivity(intent1);
             }
         });
