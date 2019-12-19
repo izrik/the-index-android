@@ -50,6 +50,10 @@ public class Chapter {
         return _verses;
     }
 
+    public Verse getVerse(int index) {
+        return _verses.get(index);
+    }
+
     public int getChapterIndex() {
         if (getBook() == null) throw new IllegalArgumentException("parentBook cannot be null");
         if (!getBook().getChapters().contains(this))

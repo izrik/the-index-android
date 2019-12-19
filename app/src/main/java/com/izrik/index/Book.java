@@ -25,6 +25,10 @@ public class Book {
         return _chapters;
     }
 
+    public Chapter getChapter(int index) {
+        return _chapters.get(index);
+    }
+
     private String _name;
 
     public String getName() {
